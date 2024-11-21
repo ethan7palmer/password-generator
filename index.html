@@ -13,6 +13,10 @@
   <body>
     <div class="container">
       <h1>Generate a <br /><span>Random Password</span></h1>
+      <p class="passwordLength">
+        Password length: <span id="sliderValue">10</span> characters
+      </p>
+      <input type="range" id="slider" min="4" max="35" step="1" value="10" />
       <div class="display">
         <input type="text" id="password" placeholder="Password" />
         <i class="bx bx-copy" onclick="copyPassword()"></i>

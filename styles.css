@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
 :root {
+  --green: #019f55;
+  --green-hover: #0c6a3e;
+  --yellow: #e1e80f;
 }
 
 * {
@@ -23,7 +26,6 @@ body {
 
 .display {
   width: 100%;
-  margin-top: 50px;
   margin-bottom: 30px;
   background: #fff;
   color: #333;
@@ -36,11 +38,12 @@ body {
 .container h1 {
   font-weight: 500;
   font-size: 45px;
+  margin-bottom: 40px;
 }
 
 .container h1 span {
-  color: #019f55;
-  border-bottom: 4px solid #019f55;
+  color: var(--green);
+  border-bottom: 4px solid var(--green);
   padding-bottom: 7px;
 }
 
@@ -49,21 +52,28 @@ body {
   cursor: pointer;
 }
 
+.display i:hover {
+  transform: scale(110%);
+  color: var(--green);
+}
+
 .display input {
   border: 0;
   outline: 0;
   font-size: 24px;
+  width: 90%;
 }
 
 .container button i {
   font-size: 30px;
   margin-right: 10px;
+  color: var(--yellow);
 }
 
 .container button {
   border: 0;
   outline: 0;
-  background: #019f55;
+  background: var(--green);
   color: #fff;
   font-size: 22px;
   font-weight: 300;
@@ -73,4 +83,60 @@ body {
   padding: 16px 26px;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.container button:hover {
+  background: var(--green-hover);
+}
+
+.container .passwordLength {
+  font-size: 20px;
+}
+
+.container .passwordLength #sliderValue {
+  color: rgb(55, 196, 151);
+  margin-inline: 3px;
+  font-size: 22px;
+}
+
+/* input range styling */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 300px;
+  padding-block: 20px;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(110%);
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  background-color: var(--green);
+  border-radius: 10px;
+  height: 10px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+
+  /* (track height / 2) - (thumb height / 2) */
+  margin-top: -10px;
+
+  background-color: #fff;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+}
+
+input[type="range"]:focus::-webkit-slider-thumb {
+  outline: 3px solid var(--yellow);
+  outline-offset: 4px;
 }
